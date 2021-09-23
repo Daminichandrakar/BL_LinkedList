@@ -1,6 +1,5 @@
 package com.bl;
 
-
 public class MyLinkedList<K> {
 	public INode<K> head;
 	public INode<K> tail;
@@ -30,7 +29,11 @@ public class MyLinkedList<K> {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
+	}
 
+	public void pop() {
+		INode tempNode = head;
+		head = head.getNext();
 	}
 
 	public void display() {
