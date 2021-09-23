@@ -43,5 +43,21 @@ class MyLinkedListTest {
 		assertEquals(true, result);
 	}
 
+	@Test
+	public void insetBetween() {
+		MyNode<Integer> firstNode = new MyNode<>(56);
+		MyNode<Integer> secoundNode = new MyNode<>(30);
+		MyNode<Integer> thirdNode = new MyNode<>(70);
+
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.addNode(firstNode);
+		myLinkedList.appendNode(thirdNode);
+		myLinkedList.insertBetween(firstNode, secoundNode);
+		System.out.println("insertBetween");
+		myLinkedList.display();
+		boolean result = myLinkedList.head.equals(firstNode) && myLinkedList.head.getNext().equals(secoundNode)
+				&& myLinkedList.tail.equals(thirdNode);
+		assertEquals(true, result);
+	}
 
 }
